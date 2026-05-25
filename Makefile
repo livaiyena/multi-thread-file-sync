@@ -26,10 +26,12 @@ $(NAME):    $(OBJS)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) \
+    rm -rf tests/__pycache__/
 
 fclean:     clean
-	rm -f $(NAME)
+	rm -f $(NAME) \
+    rm -rf tests/__pycache__/
 
 re:         fclean all
 
